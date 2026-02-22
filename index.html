@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Maha Land Startup Tool</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-draw/dist/leaflet.draw.css"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+</head>
+<body>
+
+<header>🌍 Maharashtra Land (MAHALAND)</header>
+
+<div class="container">
+  <div id="map"></div>
+
+  <div class="sidebar">
+
+    <div class="card">
+      <h3>📐 Area Details</h3>
+      <div id="result" class="result-box">Draw a polygon to calculate area</div>
+    </div>
+
+    <div class="card">
+      <h3>💰 Price Calculator</h3>
+      <input type="number" id="price" placeholder="Price per sq meter">
+      <select id="unitSelect">
+        <option value="sqm">Sq Meter</option>
+        <option value="sqft">Sq Feet</option>
+        <option value="acre">Acres</option>
+        <option value="hectare">Hectares</option>
+        <option value="guntha">Guntha</option>
+      </select>
+      <button onclick="calculatePrice()">Calculate Total Price</button>
+      <div id="priceResult" class="result-box"></div>
+    </div>
+
+    <div class="card">
+      <h3>📄 Maharashtra 7/12 Upload</h3>
+      <input type="file" id="satbaraFile" accept="application/pdf">
+      <button onclick="readSatbara()">Read 7/12 Area</button>
+      <div id="satbaraResult" class="result-box"></div>
+    </div>
+
+    <div class="card actions">
+      <h3>⚙ Actions</h3>
+      <button onclick="savePlot()">Save Plot</button>
+      <button onclick="loadPlot()">Load Saved Plot</button>
+      <button onclick="exportPDF()">Export PDF Report</button>
+      <button onclick="getLocation()">Use My Live Location</button>
+      <button class="danger" onclick="toggleDark()">Toggle Dark Mode</button>
+    </div>
+
+  </div>
+</div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet-draw/dist/leaflet.draw.js"></script>
+<script src="https://unpkg.com/leaflet-geometryutil/src/leaflet.geometryutil.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
